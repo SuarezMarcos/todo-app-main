@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: #161722;
+    min-height: 100vh;
+    transition: 1s;
+}
+
+main.light {
+    background-color: rgb(250, 249, 246);
+    transition: 1s;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.bg-dark {
+    background-image: url('./images/bg-desktop-dark.jpg');
+    background-size: cover;
+    height: 18rem;
+}
+
+.bg-light {
+    background-image: url('./images/bg-desktop-light.jpg');
+    background-size: cover;
+    height: 18rem;
+}
+
+.cardTask {
+    border-radius: 5px;
+    min-width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: -13rem;
+}
+
+.title {
+    color: rgb(240, 236, 231);
+    letter-spacing: .8rem;
+    font-weight: bolder;
+    font-size: 2.2rem;
+}
+
+.newTask {
+    display: flex;
+    align-items: center;
+    background-color:  #25273c;
+    border: none;
+    border-radius: 5px;
+    height: 4rem;
+    margin: 2rem 0 1rem;
+    padding-left: 1rem;
+    transition: 1s;
+}
+
+.newTask-light {
+    background-color:  whitesmoke;
+}
+
+input {
+    background: transparent;
+    border: none;
+    color: rgba(160, 160, 150, 0.884);
+    font-weight: 500;
+    padding-left: 1rem;
+    width: 100%;
+}
+
+input:focus, input:active {
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+button span {
+    display:flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1.5px solid #35374c;
+    color: rgb(58, 54, 49);
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.button-bg {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    padding: .3rem;
+}
+
+.delete:hover {
+    opacity: 0.7;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    background-image: url('./images/icon-sun.svg');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1rem;
+    height: 60%;
+}
+
+.icon-light {
+    background-image: url('./images/icon-moon.svg');
+}
+
+.icon:hover {
+    opacity: 0.8;
+}
+
+ul {
+    background-color: #25273c;
+    border-radius: 7px;
+    list-style: none;
+    transition: 1s;
+}
+
+.ul-light {
+    background-color: whitesmoke;
+    box-shadow: -.5px 5px 10px #a09e9e;
+    border-radius: 7px;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #35374c;
+    margin-left: -2rem;
+    padding:0 1rem 0 1rem;
+    height: 4rem;
+}
+
+.delete {
+    cursor: pointer;
+}
+
+.taskInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color:#25273c;
+    border-bottom: none;
+    border-radius: 7px;
+    color:hsla(259, 7%, 45%, 0.884);
+    padding: 1rem;
+    padding-top: 2.1rem;
+    height: 8vh;
+    transition: 1s;
+}
+
+.task-info-light {
+    background-color:whitesmoke;
+    color:hsla(259, 7%, 45%, 0.884);
+}
+
+.activity {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 1rem;
+    font-size: 14px;
+    width: 40%;
+}
+
+.activity input[type="radio"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.activity span {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.activity input[type="radio"]:checked ~ span {
+    color: hsl(220, 98%, 61%);
+}
+
+.itemsLeft, .clearCompleted {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
+}
+
+.alertMessage {
+    bottom: 14rem; 
+    border-radius: 10px;
+    background-color: rgb(228, 130, 130);
+    color: rgb(158, 25, 25);
+    border: 1px solid rgb(158, 25, 25);
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: -1rem;
+}
+
+    /* Mobile Design */
+@media (max-width: 375px) {
+
+    .bg-dark {
+        background-image: url('./images/bg-mobile-dark.jpg');
+        background-position: 0;
+        height: 16rem;
+    }
+
+    .bg-light {
+        background-image: url('./images/bg-mobile-light.jpg');
+        background-position: 100%;
+        height: 16rem;
+    }
+
+    .activity {
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 4rem;
+        align-items: center;
+        border-radius: 7px;
+        background-color: #25273c;
+        width: 100%;
+        margin-left: -1rem;
+        padding: 0 4.2rem 0 4.2rem;
+        height: 3rem;
+        transition: 1s;
+    }
+
+    .activity-light {
+        background-color: white;
+        box-shadow:-.5px 5px 10px #a09e9e;
+        transition: 1s;
+    }
+
+    .alertMessage {
+        width: 80%;
+    }
+
+    #ul {
+        margin-bottom: 5rem;
+    }
+
+    footer {
+        background-color: #161722;
+        color: aliceblue;
+    }
+}
+
+    /* Tablet Design */
+@media (max-width: 900px) {
+    .cardTask {
+        width: 90%;
+    }
+
+    .bg-dark, .bg-light {
+        height:17rem;
+    }
+
+    .newTask  {
+        height: 4rem;
+    }
+
+    .task {
+        height: 4rem;
+    }
+}
+
+
